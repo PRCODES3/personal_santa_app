@@ -1,47 +1,22 @@
 
-function goHome(){
- document.querySelectorAll('.screen').forEach(s=>s.classList.add('hidden'));
- document.querySelector('.hero').classList.remove('hidden');
+window.onload = ()=> {
+  setTimeout(()=> {
+    document.getElementById('loading-screen').style.display='none';
+    document.getElementById('app').style.display='block';
+  }, 1500);
+};
+
+function startChat(){
+  document.getElementById('home').style.display='none';
+  document.getElementById('chat').style.display='block';
 }
 
-document.getElementById('certificateBtn').onclick=()=>{
- document.querySelector('.hero').classList.add('hidden');
- document.getElementById('certificateScreen').classList.remove('hidden');
-};
-
-document.getElementById('generateCert').onclick=()=>{
- const name=document.getElementById('certName').value||"Super Star";
- const c=document.getElementById('certCanvas');
- const ctx=c.getContext('2d');
- ctx.fillStyle="#fff"; ctx.fillRect(0,0,800,600);
- ctx.fillStyle="#b5121b"; ctx.font="48px serif";
- ctx.fillText("Nice List Certificate", 180,150);
- ctx.fillStyle="#5a080c"; ctx.font="38px serif";
- ctx.fillText(name, 320,300);
- document.getElementById('downloadCert').classList.remove('hidden');
-};
-
-document.getElementById('downloadCert').onclick=()=>{
- const c=document.getElementById('certCanvas');
- const link=document.createElement('a');
- link.download="certificate.png";
- link.href=c.toDataURL();
- link.click();
-};
-
-document.getElementById('voicemailBtn').onclick=()=>{
- document.querySelector('.hero').classList.add('hidden');
- document.getElementById('voicemailScreen').classList.remove('hidden');
-};
-
-document.getElementById('playVM').onclick=()=>{
- const n=document.getElementById('vmName').value||"buddy";
- const m=document.getElementById('vmText').value||"Santa is proud of you!";
- const u=new SpeechSynthesisUtterance(`Ho Ho Ho! Hello ${n}! ${m}`);
- speechSynthesis.speak(u);
-};
-
-document.getElementById('themeBtn').onclick=()=>{
- document.querySelector('.hero').classList.add('hidden');
- document.getElementById('themeScreen').classList.remove('hidden');
-};
+function sendMsg(){
+  let msg = document.getElementById('msg').value;
+  if(!msg.trim()) return;
+  let box = document.getElementById('messages');
+  box.innerHTML += `<p><strong>You:</strong> ${msg}</p>`;
+  setTimeout(()=> {
+    box.innerHTML += `<p><strong>Santa:</strong> Ho Ho Ho! I love your message!</p>`;
+  }, 800);
+}
