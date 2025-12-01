@@ -3,16 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat with Santa - Personal Edition</title>
+  <title>Chat with Santa 🎅</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <div class="hero">
+  <div class="hero" id="hero">
     <h1>Chat with Santa 🎅</h1>
     <p>Welcome to your magical North Pole experience!</p>
-    <button id="startBtn" class="primary-btn">Get Started</button>
+    <button id="certificateBtn" class="primary-btn">Get Nice List Certificate</button>
+    <button id="voicemailBtn" class="primary-btn">Play Santa Voicemail</button>
+    <button id="themeBtn" class="primary-btn">Seasonal Magic</button>
+  </div>
+
+  <div id="certificateScreen" class="modal hidden">
+    <h2>Nice List Certificate</h2>
+    <input type="text" id="certName" placeholder="Enter child's name" />
+    <button id="generateCert" class="primary-btn">Generate Certificate</button>
+    <canvas id="certCanvas" width="800" height="600"></canvas>
+    <button id="downloadCert" class="primary-btn hidden">Download</button>
+    <button class="secondary-btn" onclick="goHome()">Back</button>
+  </div>
+
+  <div id="voicemailScreen" class="modal hidden">
+    <h2>Santa Voicemail</h2>
+    <input type="text" id="vmName" placeholder="Child's name" />
+    <input type="text" id="vmText" placeholder="Custom message" />
+    <button id="playVM" class="primary-btn">Play Message</button>
+    <button class="secondary-btn" onclick="goHome()">Back</button>
+  </div>
+
+  <div id="themeScreen" class="modal hidden">
+    <h2>Select a Magical Character</h2>
+    <button class="primary-btn themeChoice" data-theme="santa">🎅 Santa</button>
+    <button class="primary-btn themeChoice" data-theme="fairy">✨ New Year Fairy</button>
+    <button class="primary-btn themeChoice" data-theme="bunny">🐰 Easter Bunny</button>
+    <button class="primary-btn themeChoice" data-theme="tooth">🧚 Tooth Fairy</button>
+    <button class="primary-btn themeChoice" data-theme="birthday">🎁 Birthday Genie</button>
+    <button class="secondary-btn" onclick="goHome()">Back</button>
   </div>
 
   <script src="app.js"></script>
