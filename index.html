@@ -3,32 +3,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chat with Santa - Pixar Edition</title>
+<title>Chat with Santa - Full Pixar Edition</title>
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
 <script defer src="app.js"></script>
 </head>
 <body>
+
 <div id="loading-screen">
-  <img src="assets/img/5DC438AF-5169-4EEA-8E84-E6BFD3AE077C.jpeg" class="loading-santa">
-  <p>Loading Santa's Workshop...</p>
+  <h2>Loading Santa's Workshop...</h2>
 </div>
 
 <div id="app" style="display:none;">
-  <header>
-    <h1>Chat with Santa</h1>
-  </header>
-
   <section id="home">
-    <img src="assets/img/5DC438AF-5169-4EEA-8E84-E6BFD3AE077C.jpeg" class="hero-santa">
-    <button onclick="startChat()">Talk to Santa</button>
+    <h1>Chat with Santa</h1>
+    <button onclick="startChat()">Start Chat</button>
   </section>
 
   <section id="chat" style="display:none;">
     <h2>Talking to Santa...</h2>
     <div id="messages"></div>
-    <input id="msg" placeholder="Type a message..." />
+    <input id="msg" placeholder="Type here...">
     <button onclick="sendMsg()">Send</button>
   </section>
+
+  <section id="premium" style="display:none;">
+    <h2>Unlock Unlimited Chat</h2>
+    <button onclick="unlock()">Buy $4.99</button>
+  </section>
+
+  <section id="certificate" style="display:none;">
+    <h2>Nice List Certificate</h2>
+    <p>Congrats!</p>
+  </section>
+
 </div>
+
+<script src="assets/animations/snow.js"></script>
+<script src="assets/animations/santa_waving.js"></script>
+
 </body>
 </html>
