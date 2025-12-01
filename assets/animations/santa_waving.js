@@ -1,1 +1,1 @@
-
+console.log('Santa waving animation placeholder');
