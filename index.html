@@ -1,49 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat with Santa 🎅</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Chat with Santa 🎅</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="hero" id="hero">
-    <h1>Chat with Santa 🎅</h1>
-    <p>Welcome to your magical North Pole experience!</p>
-    <button id="certificateBtn" class="primary-btn">Get Nice List Certificate</button>
-    <button id="voicemailBtn" class="primary-btn">Play Santa Voicemail</button>
-    <button id="themeBtn" class="primary-btn">Seasonal Magic</button>
-  </div>
+<div class="hero">
+<h1>Chat with Santa 🎅</h1>
+<p>Your magical North Pole experience!</p>
+<button id="certificateBtn" class="btn">Get Certificate</button>
+<button id="voicemailBtn" class="btn">Santa Voicemail</button>
+<button id="themeBtn" class="btn">Seasonal Magic</button>
+</div>
 
-  <div id="certificateScreen" class="modal hidden">
-    <h2>Nice List Certificate</h2>
-    <input type="text" id="certName" placeholder="Enter child's name" />
-    <button id="generateCert" class="primary-btn">Generate Certificate</button>
-    <canvas id="certCanvas" width="800" height="600"></canvas>
-    <button id="downloadCert" class="primary-btn hidden">Download</button>
-    <button class="secondary-btn" onclick="goHome()">Back</button>
-  </div>
+<div id="certificateScreen" class="screen hidden">
+<h2>Nice List Certificate</h2>
+<input id="certName" placeholder="Enter name" />
+<button id="generateCert" class="btn">Generate</button>
+<canvas id="certCanvas" width="800" height="600"></canvas>
+<button id="downloadCert" class="btn hidden">Download</button>
+<button onclick="goHome()" class="back">Back</button>
+</div>
 
-  <div id="voicemailScreen" class="modal hidden">
-    <h2>Santa Voicemail</h2>
-    <input type="text" id="vmName" placeholder="Child's name" />
-    <input type="text" id="vmText" placeholder="Custom message" />
-    <button id="playVM" class="primary-btn">Play Message</button>
-    <button class="secondary-btn" onclick="goHome()">Back</button>
-  </div>
+<div id="voicemailScreen" class="screen hidden">
+<h2>Santa Voicemail</h2>
+<input id="vmName" placeholder="Child's name" />
+<input id="vmText" placeholder="Message" />
+<button id="playVM" class="btn">Play</button>
+<button onclick="goHome()" class="back">Back</button>
+</div>
 
-  <div id="themeScreen" class="modal hidden">
-    <h2>Select a Magical Character</h2>
-    <button class="primary-btn themeChoice" data-theme="santa">🎅 Santa</button>
-    <button class="primary-btn themeChoice" data-theme="fairy">✨ New Year Fairy</button>
-    <button class="primary-btn themeChoice" data-theme="bunny">🐰 Easter Bunny</button>
-    <button class="primary-btn themeChoice" data-theme="tooth">🧚 Tooth Fairy</button>
-    <button class="primary-btn themeChoice" data-theme="birthday">🎁 Birthday Genie</button>
-    <button class="secondary-btn" onclick="goHome()">Back</button>
-  </div>
+<div id="themeScreen" class="screen hidden">
+<h2>Select a Magical Character</h2>
+<button class="btn theme" data-theme="santa">🎅 Santa</button>
+<button class="btn theme" data-theme="fairy">✨ Fairy</button>
+<button class="btn theme" data-theme="bunny">🐰 Bunny</button>
+<button onclick="goHome()" class="back">Back</button>
+</div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
