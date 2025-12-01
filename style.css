@@ -1,23 +1,4 @@
-body {
-  background: linear-gradient(#b5121b, #5a080c);
-  color: #fff;
-  margin:0;
-  padding:0;
-  text-align:center;
-  font-family:Arial;
-}
-.hero { margin-top:60px; }
-.btn {
-  display:block;
-  margin:15px auto;
-  padding:12px 25px;
-  background:#d4a017;
-  border:none;
-  border-radius:10px;
-  font-size:18px;
-  cursor:pointer;
-  color:#5a080c;
-}
-.screen { background:#fff9e6; color:#5a080c; padding:20px; margin:20px; border-radius:10px; }
-.hidden { display:none; }
-.back { margin-top:20px; padding:10px 20px; }
+body { font-family: sans-serif; background:#fef6e4; margin:0; padding:0; text-align:center; }
+button { padding:15px 25px; border-radius:20px; border:none; background:#ff4d4d; color:white; font-size:20px; }
+.loading-santa { width:180px; margin-top:40px; animation:pop 1.4s infinite; }
+@keyframes pop { 0%{transform:scale(1);} 50%{transform:scale(1.05);} 100%{transform:scale(1);} }
